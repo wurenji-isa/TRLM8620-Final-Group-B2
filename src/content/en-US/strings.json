@@ -33,6 +33,7 @@
         "searchPlaceholder": "What are you looking for?",
         "searchButtonLabel": "search products",
         "logoAlt": "Galaxy L10n Supplies",
+        "logoSrc": "img/logo.png",
         "searchIconAlt": "search icon",
         "greetingText": "Hello G11N Warrior",
         "historyLink": "ORDER HISTORY",
@@ -43,6 +44,7 @@
         "navLinkVehicles": "VEHICLES"
     },
     "Home": {
+        "homeTitle": "Welcome to the Galaxy L10n Supplies Store!",
         "welcomeSubtitle": "We provide everything you need to take on the Galactization (G11n) Challenge (and win).",
         "symbolAlt": "Imperial Credit currency symbol"
     },
@@ -95,7 +97,8 @@
     },
     "Order": {
         "statusProcessing": "Processing",
-        "statusShipped": "Shipped"
+        "statusShipped": "Shipped",
+        "statusDelivered": "Delivered"
     },
     "OrderHistory": {
         "historyTitle": "Order History",
