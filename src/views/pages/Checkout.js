@@ -38,6 +38,9 @@ let Checkout = {
         let termsStatement = i18n.getString("Checkout", "termsStatement");
         let termsLink = i18n.getString("Checkout", "termsLink");
         let noItemMessage = i18n.getString("Checkout", "noItemMessage");
+        let studentNotice = i18n.getString("Checkout", "studentNotice");
+        let expMonthPlaceholder = i18n.getString("Checkout", "expMonthPlaceholder");
+        let expYearPlaceholder = i18n.getString("Checkout", "expYearPlaceholder");
 
         total = 0;
         //hide cart initially
@@ -51,7 +54,7 @@ let Checkout = {
         <section class="checkout">
 
             <div class="checkoutDetails">
-                <h2 class="center">Students: Please ignore any i18n errors on this page! (Incl. name order, date input, etc.)</h2>
+                <h2 class="center">${studentNotice}</h2>
                 <h1>${checkoutTitle}</h1>
                 <div class="shippingInfo">
                     <h2>${shipSectionLabel}</h2>
@@ -109,7 +112,7 @@ let Checkout = {
                                 <label for="expDate">${expDateLabel}</label>
                                 <div id="expDropdown">
                                     <select id="expDate" name="expDate" class="checkoutInput">
-                                        <option value="" disabled selected hidden>MM</option>
+                                        <option value="" disabled selected hidden>${expMonthPlaceholder}</option>
                                         `;
         for (let i = 1; i <= 31; i++) {
             var formattedNumber = ("0" + i).slice(-2); //$NON-NLS-L$
@@ -119,7 +122,7 @@ let Checkout = {
                                     </select>
                                     <h3>/</h3>
                                     <select id="expDateYear" name="expDateYear" class="checkoutInput">
-                                        <option value="" disabled selected hidden>YY</option>
+                                        <option value="" disabled selected hidden>${expYearPlaceholder}</option>
                                         `;
         for (let i = 1; i <= 12; i++) {
             var formattedNumber = ("0" + i).slice(-2); //$NON-NLS-L$
