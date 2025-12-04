@@ -1,12 +1,6 @@
 import { orderHistory } from "../../app.js";
 import i18n from "../../services/i18n.js";
 
-//takes a number and adds commas to it every 3 digits
-//VERY BAD i18n
-let formatCurrencyWithCommas = (x) => {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
 let OrderHistory = {
 
     render: async () => {
@@ -35,8 +29,7 @@ let OrderHistory = {
                     <h3>${order.getOrderDate()}</h3>
                     <h3>${order.orderNumber}</h3>
                     <div class="gridPrice">
-                        $
-                        ${formatCurrencyWithCommas(order.total)}
+                        ${i18n.formatCurrencyPlain(order.total)}
                     </div>
                     <h3>${order.getOrderStatus()}</h3>
                 </article>`
