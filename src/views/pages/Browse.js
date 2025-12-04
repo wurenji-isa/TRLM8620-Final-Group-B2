@@ -12,16 +12,18 @@ let Browse = {
 
         let productMap = null;
 
-        let title = i18n.getString("Browse", "browseTitleAll");
 
-        if(type == "droids") {
-            productMap = productList.get('droids');
-            title += i18n.getString("Browse", "browseTitleDroids");
-        }
-        else if(type == "vehicles") {
-            productMap = productList.get('vehicles');
-            title += i18n.getString("Browse", "browseTitleVehicles");
-        }
+let title = "";
+
+if (type == "droids") {
+    productMap = productList.get("droids");
+    title = i18n.getString("Browse", "browseTitleDroids");
+} else if (type == "vehicles") {
+    productMap = productList.get("vehicles");
+    title = i18n.getString("Browse", "browseTitleVehicles");
+} else {
+    title = i18n.getString("Browse", "browseTitleAll");
+}
 
         //view is solely for HTML markup, contains no static text
         let view = `<section class="browsePage">
