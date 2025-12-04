@@ -1,24 +1,27 @@
 import {featuredProducts} from "../../app.js";
 import i18n from "../../services/i18n.js";
-
 let Home = {
-    render : async () => {
-        //fetch localizable strings via i18n method 'getString'
+    render: async () => {
+
+        //localized UI strings
+        let homeTitle = i18n.getString("Home", "homeTitle");
         let welcomeSubtitle = i18n.getString("Home", "welcomeSubtitle");
 
-        //view is solely for HTML markup, contains no static text
+        //view has no static text
         let view = `
-                    <section class="welcome">
-                        <h1 class="center">Welcome to Galaxy L10n Supplies!</h1>
-                        <h3 class="center white">${welcomeSubtitle}</h3>
-                    </section>
-                    <div class="browseGrid homeGrid">`;
+            <section class="welcome">
+                <h1 class="center">${homeTitle}</h1>
+                <h3 class="center white">${welcomeSubtitle}</h3>
+            </section>
 
-        //create a box to display each of the 4 featured products
-        featuredProducts.forEach((product, key) => {
+            <div class="browseGrid homeGrid">`;
 
-            //string to give image an alt tag for accessibility
-            let imageAlt = product.title + " image";
+        //loop through featured products
+        featuredProducts.forEach((product) => {
+
+            //localized alt text + product title
+            let imageAltSuffix = i18n.getString("Home", "imageSuffix");
+            let imageAlt = product.title + imageAltSuffix;
 
             view += `
                     <article id="${product.productID}" class="${product.type}">
