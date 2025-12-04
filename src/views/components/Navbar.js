@@ -11,6 +11,7 @@ let Navbar = {
         let searchPlaceholder = i18n.getString("Navbar", "searchPlaceholder");
         let searchButtonLabel = i18n.getString("Navbar", "searchButtonLabel");
         let logoAlt = i18n.getString("Navbar", "logoAlt");
+        let logoSrc = i18n.getString("Navbar", "logoSrc");
         let searchIconAlt = i18n.getString("Navbar", "searchIconAlt");
         let historyLink = i18n.getString("Navbar", "historyLink");
         let arrowAlt = i18n.getString("Navbar", "arrowAlt");
@@ -23,7 +24,6 @@ let Navbar = {
         let localeLabel = i18n.getString("LocaleSelector", "localeLabel");
         let localeUS = i18n.getString("LocaleSelector", "localeUS");
         let localeCN = i18n.getString("LocaleSelector", "localeCN");
-        let localeNL = i18n.getString("LocaleSelector", "localeNL");
 
 
         //view is solely for HTML markup, contains no static text
@@ -31,7 +31,7 @@ let Navbar = {
         `<header>
         <!-- logo, search bar, local, profile drop down -->
         <section>
-            <img src="img/logo.png" id="logo" alt="${logoAlt}">
+            <img src="${logoSrc}" id="logo" alt="${logoAlt}">
         </section>
         <section id="search">
             <div id="bar">
@@ -56,7 +56,6 @@ let Navbar = {
               <label for="locale"><h3>${localeLabel}</h3></label>
               <select id="locale" class="hamDrop">
                 <option value="en-US">${localeUS}</option>
-                <option value="nl-NL">${localeNL}</option>
                 <option value="zh-CN">${localeCN}</option>
               </select>
             </div>
