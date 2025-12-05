@@ -916,6 +916,7 @@ p {
 
 .localeSelector select {
   width: 100%;
+  min-width: 160px;
   background-color: #a6c740;
   color: white;
   padding: 3px;
